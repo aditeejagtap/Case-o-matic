@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Summary Entry | Case-o-Matic{% endblock %}
+
+{% block content %}
+<h2>Enter number of Unassigned and Pending Cases for {{ today }}</h2>
+
+<form method="POST">
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Region</th>
+            <th>Unassigned Cases</th>
+            <th>Total Pending Cases</th>
+        </tr>
+        {% for region in regions %}
+        <tr>
+            <td>{{ region }}</td>
+            <td>
+                <input type="number" name="{{ region }}_unassigned" min="0" required>
+            </td>
+            <td>
+                <input type="number" name="{{ region }}_pending" min="0" required>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <button type="submit">Show Summary</button>
+</form>
+
+{% if summary_data %}
+    <h2>Today's Summary</h2>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Date</th>
+            <th>Region</th>
+            <th>Existing in queue</th>
+            <th>Assigned</th>
+            <th>Delivered</th>
+            <th>Returned</th>
+            <th>Resources</th>
+            <th>Unassigned</th>
+            <th>Total Pending</th>
+        </tr>
+        {% for row in summary_data %}
+        <tr>
+            <td>{{ row.date }}</td>
+            <td>{{ row.region }}</td>
+            <td>{{ row.existing }}</td>
+            <td>{{ row.assigned }}</td>
+            <td>{{ row.delivered }}</td>
+            <td>{{ row.returned }}</td>
+            <td>{{ row.resources }}</td>
+            <td>{{ row.unassigned }}</td>
+            <td>{{ row.pending }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}
+
+
+

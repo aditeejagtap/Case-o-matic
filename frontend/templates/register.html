@@ -1,0 +1,25 @@
+<!-- frontend/templates/register.html -->
+{% extends "base.html" %}
+
+{% block title %}Register (Admin only) | Caseomatic{% endblock %}
+
+{% block content %}
+    <h2>Register New User</h2>
+    <form method="POST" action="/register">
+        <label for="comId">Enter CoM ID:</label>
+        <input type="text" name="comId" id="comId" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br><br>
+
+        <label for="programmer">Programmer Name:</label>
+        <input type="text" name="programmer" id="programmer" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    {% if message %}
+        <p style="color:green;">{{ message }}</p>
+    {% endif %}
+
+{% endblock %}

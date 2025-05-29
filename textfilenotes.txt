@@ -1,0 +1,31 @@
+--summarize, hsummary
+--excel output
+--send mail
+--total line
+
+INSERT INTO user (comId , password, programmer)
+VALUES
+    ('A01','apacuser', 'Aditee'),
+    ('A02','apacuser', 'Kia'),
+    ('A03','apacuser', 'Ritika'),
+    ('A04','apacuser', 'Ganit'),
+    ('A05','apacuser', 'Rioza'),
+    ('A06','apacuser', 'Lipik'),
+    ('M01','meuser', 'Anirudh'),
+    ('M03','meuser', 'Kritik'),
+    ('M02','meuser', 'Ujjwal'),
+    ('T01','tauser', 'Jammy');
+
+
+INSERT INTO detail (date,userId, region, casenum, status, comments)
+VALUES 
+('2025-05-18', 1, 'ANZ', 72545, 'Returned', ''),
+('2025-05-18', 2, 'ANZ', 875757, 'Delivered', ''),
+('2025-05-18', 3, 'ASIA', 18688, 'Delivered', ''),
+('2025-05-18', 4, 'ASIA', NULL, NULL, 'Delivered CPR#345'),
+('2025-05-18', 5, 'ASIA', 979644, 'Returned', ''),
+('2025-05-18', 6, 'ASIA', NULL, NULL, 'Working on CPRs'),
+('2025-05-18', 7, 'ME', 22575, 'Delivered', ''),
+('2025-05-18', 8, 'ME', 89653, 'NMI', ''),
+('2025-05-18', 9, 'ME', 54977, 'Delivered', ''),
+('2025-05-18', 10, 'TA', 87667, 'Delivered', '');

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <title>{% block title %}Case-o-Matic{% endblock %}</title>
+</head>
+<body>
+
+    <!-- Common Header -->
+    <header>
+        
+        <nav>
+            <h1>📢 Case-o-Matic App 📢</h1>
+            <!-- Insert links here -->
+        </nav>
+    <hr>
+    </header>
+
+    <!-- Content Block - Changes for all pages-->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Common Footer -->
+    <hr>
+    <footer>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <p>&copy; 🛠 2025 Case-o-Matic. All rights reserved. 🛠</p>
+    </footer>
+    
+</body>
+</html>
